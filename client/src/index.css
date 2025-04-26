@@ -1,0 +1,19 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Outfit:wght@100..900&family=Poly:ital@0;1&display=swap');
+
+
+@import "tailwindcss";
+
+*{
+  font-family: "Outfit", sans-serif;
+}
+
+
+@theme{
+  --color-primary: #4fbf8b;
+  --color-primary-dull: #44ae7c;
+}
+
+.no-scrollbar::-webkit-scrollbar{
+  display: none;
+}
