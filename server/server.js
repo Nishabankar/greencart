@@ -11,6 +11,7 @@ import productRouter from './routes/productRoute.js';
 import cartRouter from './routes/cartRoute.js';
 import addressRouter from './routes/addressRoute.js';
 import orderRouter from './routes/orderRoute.js';
+import { stripeWebhhoks } from './controllers/orderController.js';
 
 
 const app = express();
@@ -23,6 +24,8 @@ await connectCloudinary()
 
 // Allow mulitple origins
 const allowedOrigins = [ 'http://localhost:5173' ]
+
+app.post('/stripe', express.raw({type: 'application/json'}), stripeWebhhoks)
 
 
 //Middleware configuration

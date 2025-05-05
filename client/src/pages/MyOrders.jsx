@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 const MyOrders = () => {
 
     const [ myOrders, setMyOrders ] = useState( [] )
-    const { currency, axios, user, fetchProducts } = useAppContext()
+    const { currency, axios, user } = useAppContext()
 
 
     const fetchMyOrders = async () => {
@@ -14,7 +14,7 @@ const MyOrders = () => {
             const { data } = await axios.get( '/api/order/user')
             if (data.success) {
                 setMyOrders( data.orders )
-                // console.log( data.orders );
+
             }
 
         } catch ( error ) {
@@ -54,10 +54,10 @@ const MyOrders = () => {
 
                             <div className='flex items-center mb-4 md:mb-0'>
                                 <div className='bg-primary/10 p-4 rounded-lg'>
-                                 {/* <img
+                                 <img
                                         src={item.product.image[0]}
                                         alt=""
-                                        className='w-16 h-16' /> */}
+                                        className='w-16 h-16' />
                                  </div>
                                 <div className='ml-4'>
                                     <h2 className='text-xl font-medium text-gray-800'>{item.product.name}</h2>
